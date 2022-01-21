@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home page</title>
+</head>
+<body>
+welcome to home page
+<br>
+<br>
+<br>
+<form action="add">
+    {% csrf_token %}
+    keyword : <input type="text" name="num1">
+    link    : <input type="text" name="num2">
+    <br>
+    <br>
+    csv file name: <input type="text" name="fname">
+    <button type ="submit"> search on Google </button>
+</form>
+</body>
+</html>
