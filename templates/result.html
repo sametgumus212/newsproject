@@ -7,7 +7,27 @@
 <body>
 {% block content %}
 {%csrf_token%}
-result.. {{result}}
+result = {{result}}
+{% endblock %}
+<br>
+<br>
+{% block tcontent %}
+{%csrf_token%}
+topic result = {{tresult}}
+{% endblock %}
+<br>
+<br>
+
+{% block bcontent %}
+{%csrf_token%}
+bing results = {{bresult}}
+{% endblock %}
+<br>
+<br>
+
+{% block gcontent %}
+{%csrf_token%}
+contents :  {{contentim}}
 {% endblock %}
 </body>
 </html>

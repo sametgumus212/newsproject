@@ -15,8 +15,57 @@ welcome to home page
     link    : <input type="text" name="num2">
     <br>
     <br>
+    start_date     : <input type="text" name="date1">
+    finish_date    : <input type="text" name="date2">
+    <br>
+    <br>
     csv file name: <input type="text" name="fname">
     <button type ="submit"> search on Google </button>
+</form>
+
+<br>
+<br>
+<br>
+
+
+<form action="tadd">
+    {% csrf_token %}
+    keyword : <input type="text" name="tnum1">
+    topic    : <input type="text" name="tnum2">
+    <br>
+    <br>
+    start_date     : <input type="text" name="tdate1">
+    finish_date    : <input type="text" name="tdate2">
+    <br>
+    <br>
+    csv file name: <input type="text" name="tfname">
+    <button type ="submit"> search topic on Google </button>
+</form>
+<br>
+<br>
+<br>
+
+<form action="bingadd">
+    {% csrf_token %}
+
+    bing keyword : <input type="text" name="bnum1">
+    link    : <input type="text" name="bnum2">
+    <br>
+    <br>
+
+    csv file name: <input type="text" name="bfname">
+    <button type ="submit"> search on Bing </button>
+</form>
+<br>
+<br>
+
+
+
+
+<form action="getcontent">
+    {% csrf_token %}
+    file path : <input type="text" name="fp1">
+    <button type ="submit"> Get Content </button>
 </form>
 </body>
 </html>

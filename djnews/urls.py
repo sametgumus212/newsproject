@@ -19,12 +19,19 @@ from django.urls import path, include
 import home.home.views
 from home.home.views import home_view
 from home.home.views import add
+from home.home.views import tadd
+
+from home.home.views import getcontent
+from home.home.views import bingadd
 from home.home.views import venue_csv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view),
     path('add', add, name="add"),
+    path('tadd', tadd, name="tadd"),
+    path('bingadd',bingadd,name="bingadd"),
+    path('getcontent', getcontent, name="getcontent"),
     path('apps', include('apps.apps.urls')),
     path('home', include('home.home.urls')),
     path('venue_csv', home.home.views.venue_csv, name='venue_csv')
