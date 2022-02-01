@@ -20,16 +20,19 @@ import home.home.views
 from home.home.views import home_view
 from home.home.views import add
 from home.home.views import tadd
-
+from home.home.views import btadd
 from home.home.views import getcontent
 from home.home.views import bingadd
+from home.home.views import hoew
 from home.home.views import venue_csv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view),
+    path('hoew', hoew, name="hoew"),
     path('add', add, name="add"),
     path('tadd', tadd, name="tadd"),
+    path('btadd', btadd, name="btadd"),
     path('bingadd',bingadd,name="bingadd"),
     path('getcontent', getcontent, name="getcontent"),
     path('apps', include('apps.apps.urls')),

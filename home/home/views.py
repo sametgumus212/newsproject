@@ -1,12 +1,19 @@
 from django.shortcuts import render,HttpResponse
 from newsfetch.google import google_search
 from newsfetch.google2 import google_search2
+from newsfetch.google3 import google_search3
+from newsfetch.google6 import google_search6
 from newsfetch.news import newspaper
 from home.home.models import Venue
 from django.http import HttpResponse
+from newsfetch.bing3 import Bing3
 from newsfetch.bing import Bing
 import csv
 from templates import *
+# from django.shortcuts import render
+from newsfetch.forms import GeeksForm
+
+
 
 def venue_csv(request):
     response=HttpResponse(content_type='text/csv')
@@ -64,6 +71,36 @@ def tadd(request):
     else:
         pass
     return render(request,'result.html',{"tresult":tresult})
+
+def hoew(request):
+    context = {}
+    context['form'] = GeeksForm()
+    return render(request, "home.html", context)
+
+
+def btadd(request):
+    btnum1 = request.GET.get("btnum1")
+    btnum2 = request.GET.get("btnum2")
+    btfname = request.GET.get("btfname")
+    btdate1 = request.GET.get("btdate1")
+    btdate2 = request.GET.get("btdate2")
+
+    if btnum1!=None and btnum2!=None:
+        googletb=google_search6(btnum1, btnum2,btfname,btdate1,btdate2)
+        # bingsearch3 = Bing3(btnum1, btnum2, btfname)
+        # count=bingsearch3.crawl_all()
+        # bresult = "Bing search completed successfully"
+        noc=0
+        for i in googletb.urls:
+            noc+=1
+        btresult="Your search on google by topic finished successfully with {} links".format(noc)
+    else:
+        pass
+    return render(request,'result.html',{"btresult":btresult})
+
+
+
+
 
 def bingadd(request):
     bnum1 = request.GET.get("bnum1")

@@ -45,6 +45,34 @@ welcome to home page
 <br>
 <br>
 
+
+
+<form action="btadd" method="get">
+    {% csrf_token %}
+    keyword : <input type="text" name="btnum1">
+    site/topic    : <input type="text" name="btnum2">
+    <br>
+    <br>
+
+    start_date     : <input type="text" name="btdate1">
+    finish_date    : <input type="text" name="btdate2">
+    <br>
+    <br>
+
+    txt file name: <input type="text" name="btfname">
+    <button type ="submit"> search on news.google </button>
+</form>
+<br>
+
+<!--<form method = "GET">-->
+<!--    {% csrf_token %}-->
+<!--    {{form}}-->
+<!--     <input type = "submit" value = "Submit">-->
+
+<!--</form>-->
+<br>
+<br>
+
 <form action="bingadd">
     {% csrf_token %}
 
